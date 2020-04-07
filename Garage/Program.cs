@@ -30,8 +30,7 @@ namespace Garage
                     Console.WriteLine("\n3. LIST THE VEHICLE IN THE GARAGE");
                     Console.WriteLine("\n4. REMOVE THE VEHICLE FROM THE GARAGE");
                     Console.WriteLine("\n5. DISPLAY THE VEHICLE DETAILS");
-                    Console.WriteLine("\n6. SEARCH FOR VEHICLE PROPERTIES");
-                    Console.WriteLine("\n7. SEARCH FOR FOUR WHEELERS");
+                    Console.WriteLine("\n6. SEARCH THE VEHICLE WITH INPUTED PROPERTIES")
                     Console.WriteLine("\n8. EXIT APP");
 
 
@@ -62,19 +61,15 @@ namespace Garage
                             ShowVehicleData();
                             break;
                         case '6':
-                            FindVehiclesWithProperties();
+                            VehiclesWithProperties();
                             break;
-
-                        case '7': // Test function: 
-                            Show4Wheelers();
-                            break;
-                        case '8':
-                            Console.WriteLine("Thank You and Goodbye!");
+                        case '0':
+                            Console.WriteLine("EXIT APPLICATION!");
                             break;
                         default:
                             break;
                     }
-                    if (inString[0] == '8') break;
+                    if (inString[0] == '0') break;
                 }
             }
 
@@ -238,16 +233,6 @@ namespace Garage
                 Console.WriteLine($"Number of wheels: {vehicle.Wheels}\n");
             }
 
-            /* private void PermanentBackup()
-             {
-                 if (!theHandler.Initialized())
-                 {
-                     Console.WriteLine("The garage is not Open!\n");
-                     return;
-                 }
-                 throw new NotImplementedException();
-             }*/
-
             private void RemoveVehicle()
             {
                 if (!theHandler.Initialized())
@@ -258,9 +243,9 @@ namespace Garage
                 Console.WriteLine("TO UNPARK,ENTER THE VEHICLE REGISTRATION NUMBER:{regno}");
                 string inString = Console.ReadLine().ToUpper();
                 if (theHandler.RemoveVehicle(inString))
-                    Console.WriteLine($"Vehicle {inString} was successfully removed.\n");
+                    Console.WriteLine($"VEHICLE {inString} SUCCESFULLY REMOVED.\n");
                 else
-                    Console.WriteLine($"Vehicle {inString} could not be found in the garage.\n");
+                    Console.WriteLine($"Vehicle {inString}is cannot be found in garage.\n");
             }
 
 
@@ -287,8 +272,14 @@ namespace Garage
             }
 
 
-            private void FindVehiclesWithProperties()
+            private void VehiclesWithProperties()
             {
+                 if (!theHandler.Initialized())
+                {  
+                    Console.Clear(); 
+                    Console.WriteLine("THE GARAGE IS EMPTY,PLEASE CHOOSE OPTION 1 TO OPEN\n");
+                    return;
+                }
                 Console.WriteLine("ENTER THE VALUE OF THE SPECIFIC PROPERTY:");
                 // Console.WriteLine("Empty line (Return) is interpreted as accepting any value.");
                 Console.WriteLine("ENTER THE COLOR OF THE VEHICLE:");
@@ -297,16 +288,11 @@ namespace Garage
                 if (!int.TryParse(Console.ReadLine(), out int wheels)) wheels = -1;
                 var vehicles = theHandler.GetCharacterizedVehicles(wheels, color);
                 foreach (Vehicle v in vehicles)
+                {
                     Console.WriteLine(v.ReGNO);
+                }
             }
-
-            private void Show4Wheelers()
-            {
-                var vehicles = theHandler.Show4Wheelers();
-                foreach (Vehicle v in vehicles)
-                    Console.WriteLine(v.ReGNo);
-
-            }
+           
         }
     }
 
