@@ -280,8 +280,7 @@ namespace Garage
                     Console.WriteLine("THE GARAGE IS EMPTY,PLEASE CHOOSE OPTION 1 TO OPEN\n");
                     return;
                 }
-                Console.WriteLine("ENTER THE VALUE OF THE SPECIFIC PROPERTY:");
-                // Console.WriteLine("Empty line (Return) is interpreted as accepting any value.");
+                Console.WriteLine("PLEASE ENTER THE SPECIFIED PROPERTY:");
                 Console.WriteLine("ENTER THE COLOR OF THE VEHICLE:");
                 string color = Console.ReadLine();
                 Console.WriteLine("NUMBER OF WHEELS OF THE VEHICLE:");
