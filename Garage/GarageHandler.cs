@@ -49,11 +49,6 @@ namespace Garage
                (color != null || v.Color == color)
             );
         }
-
-        public IEnumerable<Vehicle> Show4Wheelers()
-        {
-            return theGarage.Where(v => v.Wheels == 4);
-        }
-
+      
     }
 }
