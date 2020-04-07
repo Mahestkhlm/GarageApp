@@ -30,7 +30,7 @@ namespace Garage
                     Console.WriteLine("\n3. LIST THE VEHICLE IN THE GARAGE");
                     Console.WriteLine("\n4. REMOVE THE VEHICLE FROM THE GARAGE");
                     Console.WriteLine("\n5. DISPLAY THE VEHICLE DETAILS");
-                    Console.WriteLine("\n6. SEARCH THE VEHICLE WITH INPUTED PROPERTIES")
+                    Console.WriteLine("\n6. SEARCH THE VEHICLE WITH INPUTED PROPERTIES");
                     Console.WriteLine("\n8. EXIT APP");
 
 
