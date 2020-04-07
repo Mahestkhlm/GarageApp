@@ -31,7 +31,7 @@ namespace Garage
                     Console.WriteLine("\n4. REMOVE THE VEHICLE FROM THE GARAGE");
                     Console.WriteLine("\n5. DISPLAY THE VEHICLE DETAILS");
                     Console.WriteLine("\n6. SEARCH THE VEHICLE WITH INPUTED PROPERTIES");
-                    Console.WriteLine("\n8. EXIT APP");
+                    Console.WriteLine("\n0. EXIT APP");
 
 
 
@@ -214,7 +214,7 @@ namespace Garage
             {
                 if (!theHandler.Initialized())
                 {
-                    Console.WriteLine("The garage must be built before it can be used\n");
+                    Console.WriteLine("CREATE THE GARAGE FIRST! CHOOSE OPTION 1:\n");
                     return;
                 }
                 Console.WriteLine("ENTER THE REGISTRATION NUMBER OF THE VEHICLE:");
