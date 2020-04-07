@@ -65,7 +65,7 @@ namespace Garage
     class Bus : Vehicle
     {
         private bool SchoolBus;
-        public bool Bend { get => SchoolBus; set => SchoolBus = value; }
+        public bool schoolbus { get => SchoolBus; set => SchoolBus = value; }
 
         public Bus(string regno, string colour, int wheel, bool Bustype) : base(regno, colour, wheel)
         {
