@@ -133,7 +133,7 @@ namespace Garage
                 if (!theHandler.Initialized())
                 {
 
-                    Console.WriteLine("The garage must be built before it can be used\n");
+                    Console.WriteLine("CREATE GARAGE BEFORE USING!\n");
                     return;
                 }
                 Console.Clear();
