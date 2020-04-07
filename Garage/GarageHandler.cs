@@ -26,14 +26,14 @@ namespace Garage
             }
         }
 
-        public bool RemoveVehicle(string license)
+        public bool RemoveVehicle(string REGNO)
         {
-            return theGarage.RemoveVehicle(license);
+            return theGarage.RemoveVehicle(REGNO);
         }
 
-        public Vehicle FindVehicle(string license)
+        public Vehicle FindVehicle(string REGNO)
         {
-            return theGarage.FindVehicle(license);
+            return theGarage.FindVehicle(REGNO);
         }
 
         public IEnumerable<Vehicle> ListVehicles()
